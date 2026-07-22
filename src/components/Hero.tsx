@@ -1,20 +1,8 @@
-import StarField from "./StarField";
 import { IconEye } from "./icons";
 
 export default function Hero() {
   return (
     <section id="accueil" className="relative flex min-h-screen items-center overflow-hidden pt-24">
-      <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-deep)] via-[var(--bg-void)] to-[var(--bg-void)]" />
-      <StarField />
-      <div
-        className="animate-pulse-glow absolute -left-32 top-20 h-96 w-96 rounded-full opacity-40 blur-3xl"
-        style={{ background: "radial-gradient(circle, rgba(155,135,217,0.5), transparent 70%)" }}
-      />
-      <div
-        className="animate-pulse-glow absolute -right-24 bottom-10 h-[28rem] w-[28rem] rounded-full opacity-30 blur-3xl"
-        style={{ background: "radial-gradient(circle, rgba(203,161,92,0.45), transparent 70%)", animationDelay: "2s" }}
-      />
-
       <div className="relative mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border-soft)] px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-gold-light">
