@@ -1,4 +1,5 @@
 import { IconShield, IconAura, IconEye } from "./icons";
+import Reveal from "./Reveal";
 
 const badges = [
   {
@@ -21,7 +22,7 @@ const badges = [
 export default function Trust() {
   return (
     <section className="relative mx-auto max-w-6xl px-5 py-16">
-      <div className="glass-panel grid gap-8 rounded-3xl p-8 sm:grid-cols-3 sm:p-10">
+      <Reveal className="glass-panel grid gap-8 rounded-3xl p-8 sm:grid-cols-3 sm:p-10">
         {badges.map((badge) => (
           <div key={badge.title} className="flex items-start gap-4">
             <div className="text-gold-light">{badge.icon}</div>
@@ -31,7 +32,7 @@ export default function Trust() {
             </div>
           </div>
         ))}
-      </div>
+      </Reveal>
 
       <div className="mt-8 text-center">
         <a

@@ -102,4 +102,9 @@ body {
   .animate-pulse-glow {
     animation: none;
   }
+  .reveal {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

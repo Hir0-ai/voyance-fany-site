@@ -1,4 +1,5 @@
 import { IconMoonPhase } from "./icons";
+import Reveal from "./Reveal";
 
 // Texte de présentation réécrit à partir du site existant — à faire relire et
 // valider par Fany avant mise en ligne (dates, parcours, détails personnels).
@@ -6,7 +7,7 @@ export default function About() {
   return (
     <section id="a-propos" className="relative mx-auto max-w-6xl px-5 py-24">
       <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-        <div className="relative mx-auto flex h-72 w-72 items-center justify-center sm:h-80 sm:w-80">
+        <Reveal className="relative mx-auto flex h-72 w-72 items-center justify-center sm:h-80 sm:w-80">
           <div
             className="absolute inset-0 rounded-full opacity-80"
             style={{
@@ -20,9 +21,9 @@ export default function About() {
           <span className="absolute bottom-3 rounded-full bg-[var(--bg-void)]/70 px-3 py-1 text-[11px] text-ink-muted">
             Portrait à venir
           </span>
-        </div>
+        </Reveal>
 
-        <div>
+        <Reveal delay={150}>
           <span className="text-xs uppercase tracking-[0.2em] text-gold-light">À propos de Fany</span>
           <h2 className="font-display mt-3 text-3xl sm:text-4xl">
             Une écoute <span className="text-gradient-gold">sincère</span>, un don transmis depuis
@@ -44,7 +45,7 @@ export default function About() {
               votre histoire, dans le respect, la confidentialité et la bienveillance.
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

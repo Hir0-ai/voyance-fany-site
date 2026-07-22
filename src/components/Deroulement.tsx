@@ -1,4 +1,5 @@
 import { IconHouse, IconPhone, IconAura } from "./icons";
+import Reveal from "./Reveal";
 
 const steps = [
   {
@@ -22,7 +23,7 @@ const steps = [
 export default function Deroulement() {
   return (
     <section id="deroulement" className="relative mx-auto max-w-6xl px-5 py-24">
-      <div className="mb-12 max-w-2xl">
+      <Reveal className="mb-12 max-w-2xl">
         <span className="text-xs uppercase tracking-[0.2em] text-gold-light">Comment ça se passe</span>
         <h2 className="font-display mt-3 text-3xl sm:text-4xl">
           Trois façons de <span className="text-gradient-gold">vous accompagner</span>
@@ -31,18 +32,20 @@ export default function Deroulement() {
           Chaque consultation est adaptée à votre rythme et à vos besoins, dans la bienveillance et la
           confidentialité.
         </p>
-      </div>
+      </Reveal>
 
       <div className="grid gap-5 sm:grid-cols-3">
         {steps.map((step, index) => (
-          <div key={step.title} className="glass-panel relative overflow-hidden rounded-2xl p-7">
-            <span className="font-display absolute -right-2 -top-4 text-7xl text-white/5">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <div className="relative text-gold-light">{step.icon}</div>
-            <h3 className="font-display relative mt-4 text-xl">{step.title}</h3>
-            <p className="relative mt-2 text-sm leading-relaxed text-ink-muted">{step.description}</p>
-          </div>
+          <Reveal key={step.title} delay={index * 110}>
+            <div className="glass-panel relative overflow-hidden rounded-2xl p-7">
+              <span className="font-display absolute -right-2 -top-4 text-7xl text-white/5">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div className="relative text-gold-light">{step.icon}</div>
+              <h3 className="font-display relative mt-4 text-xl">{step.title}</h3>
+              <p className="relative mt-2 text-sm leading-relaxed text-ink-muted">{step.description}</p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>

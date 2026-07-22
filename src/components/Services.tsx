@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { IconEye, IconEar, IconCards, IconPendulum, IconAura, IconHouse, IconShield, IconHands } from "./icons";
+import Reveal from "./Reveal";
 
 type Service = {
   icon: ReactNode;
@@ -67,7 +68,7 @@ export default function Services() {
   return (
     <>
       <section id="voyance" className="relative mx-auto max-w-6xl px-5 py-24">
-        <div className="mb-12 max-w-2xl">
+        <Reveal className="mb-12 max-w-2xl">
           <span className="text-xs uppercase tracking-[0.2em] text-gold-light">Voyance</span>
           <h2 className="font-display mt-3 text-3xl sm:text-4xl">
             Des consultations pour <span className="text-gradient-gold">éclairer votre chemin</span>
@@ -76,16 +77,18 @@ export default function Services() {
             À l&apos;aide des oracles, des tarots et du pendule, j&apos;explore avec vous vos questions
             de cœur, de travail et de vie pour vous offrir des prédictions à court et long terme.
           </p>
-        </div>
+        </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {voyanceServices.map((service) => (
-            <ServiceCard key={service.title} {...service} />
+          {voyanceServices.map((service, index) => (
+            <Reveal key={service.title} delay={index * 90}>
+              <ServiceCard {...service} />
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section id="soins" className="relative mx-auto max-w-6xl px-5 py-24">
-        <div className="mb-12 max-w-2xl">
+        <Reveal className="mb-12 max-w-2xl">
           <span className="text-xs uppercase tracking-[0.2em] text-gold-light">Soins énergétiques</span>
           <h2 className="font-display mt-3 text-3xl sm:text-4xl">
             Retrouvez <span className="text-gradient-gold">l&apos;harmonie</span> du corps et des lieux
@@ -94,10 +97,12 @@ export default function Services() {
             Des soins énergétiques pour apaiser les maux du quotidien, protéger votre entourage et
             purifier vos espaces de vie.
           </p>
-        </div>
+        </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {soinsServices.map((service) => (
-            <ServiceCard key={service.title} {...service} />
+          {soinsServices.map((service, index) => (
+            <Reveal key={service.title} delay={index * 90}>
+              <ServiceCard {...service} />
+            </Reveal>
           ))}
         </div>
       </section>

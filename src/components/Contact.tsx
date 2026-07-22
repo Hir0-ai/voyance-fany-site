@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { IconPhone, IconMail, IconPin, IconClock } from "./icons";
+import Reveal from "./Reveal";
 
 const ADDRESS = "12 rue Du Lieutenant Le Corfec, 35136 Saint-Jacques-de-la-Lande";
 const EMAIL = "35fanyvoyance@gmail.com";
@@ -22,7 +23,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative mx-auto max-w-6xl px-5 py-24">
-      <div className="mb-12 max-w-2xl">
+      <Reveal className="mb-12 max-w-2xl">
         <span className="text-xs uppercase tracking-[0.2em] text-gold-light">Contact</span>
         <h2 className="font-display mt-3 text-3xl sm:text-4xl">
           Prenons <span className="text-gradient-gold">rendez-vous</span>
@@ -30,9 +31,10 @@ export default function Contact() {
         <p className="mt-4 text-ink-muted">
           Par téléphone, par email ou via le formulaire ci-dessous, je vous réponds avec plaisir.
         </p>
-      </div>
+      </Reveal>
 
       <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+        <Reveal>
         <form onSubmit={handleSubmit} className="glass-panel space-y-4 rounded-2xl p-7">
           <div>
             <label htmlFor="name" className="mb-1.5 block text-sm text-ink-muted">
@@ -82,8 +84,9 @@ export default function Contact() {
             Envoyer la demande
           </button>
         </form>
+        </Reveal>
 
-        <div className="flex flex-col gap-5">
+        <Reveal delay={150} className="flex flex-col gap-5">
           <div className="glass-panel space-y-5 rounded-2xl p-7">
             <a href="tel:0603636545" className="flex items-center gap-3 text-ink hover:text-gold-light">
               <IconPhone className="h-5 w-5 text-gold-light" /> 06 03 63 65 45
@@ -114,7 +117,7 @@ export default function Contact() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
